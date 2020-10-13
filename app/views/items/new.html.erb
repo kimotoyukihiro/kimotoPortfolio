@@ -1,0 +1,27 @@
+<div class="col-xs-12">
+
+	新規投稿フォーム
+
+	<%= form_for (@item) do |f| %>
+
+		<div class="field">
+			<%= f.label :イメージ %>
+			<%= f.attachment_field :image %>
+		</div>
+
+		<div class="field">
+			<%= f.label :タイトル %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div class="field">
+			<%= f.label :レビュー %>
+			<%= f.text_area :review %>
+		</div>
+
+		<div class="actions">
+			<%= f.submit :投稿する %>
+		</div>
+
+	<% end %>
+</div>
