@@ -1,3 +1,31 @@
 商品名
-<%= attachment_image_tag @item, :image, :fill, 300, 300, format: 'jpeg' %>
-<%= @item.title %>
+<div>
+	<%= @item.title %>
+</div>
+
+<div>
+	<%= attachment_image_tag @item, :image, :fill, 200, 200, format: 'jpeg' %>
+</div>
+
+商品レビュー
+<div>
+	<%= @item.review %>
+</div>
+
+<div>
+	投稿者名
+	<%= @item.user.name%>
+</div>
+
+<div>
+	美容室名
+	<%= @item.user.salon_name %>
+</div>
+
+<div>
+	美容室住所
+	<%= @item.user.salon_address %>
+</div>
+
+<%= link_to "編集",edit_item_path(@item) %>
+<%= link_to "戻る",items_path %>

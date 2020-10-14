@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2020_10_11_073121) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
+    t.string "salon_name"
+    t.string "salon_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "salonname"
-    t.string "salonaddress"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

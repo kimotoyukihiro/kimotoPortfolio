@@ -18,6 +18,23 @@ class ItemsController < ApplicationController
 		redirect_to item_path(@item.id)
 	end
 
+	def edit
+		@item =Item.find(params[:id])
+	end
+
+	def update
+		@item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to item_path(@item), notice: "successfully updated book!"
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+  	@item.destroy
+  	redirect_to items_path, notice: "successfully delete book!"
+  end
 	private
 	def item_params
 		params.require(:item).permit(:title,:review,:image)
