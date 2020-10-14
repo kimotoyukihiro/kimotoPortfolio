@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 	def show
 		@item =Item.find(params[:id])
+		@comment = ItemComment.new
 	end
 
 	def index
@@ -13,6 +14,7 @@ class ItemsController < ApplicationController
 
 	def create
 		@item = Item.new(item_params)
+		@comment = Comment.new
 		@item.user_id = current_user.id
 		@item.save!
 		redirect_to item_path(@item.id)
@@ -24,17 +26,19 @@ class ItemsController < ApplicationController
 
 	def update
 		@item = Item.find(params[:id])
-    if @item.update(item_params)
-      redirect_to item_path(@item), notice: "successfully updated book!"
-    else
-      render 'edit'
+	    if @item.update(item_params)
+	      redirect_to item_path(@item), notice: "successfully updated item!"
+	    else
+	      render 'edit'
     end
   end
 
-  def destroy
-  	@item.destroy
-  	redirect_to items_path, notice: "successfully delete book!"
-  end
+	def destroy
+	  	@item = Item.find(params[:id])
+		  	@item.destroy
+		  	redirect_to items_path, notice: "successfully delete item!"
+	end
+
 	private
 	def item_params
 		params.require(:item).permit(:title,:review,:image)

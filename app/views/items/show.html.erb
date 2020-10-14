@@ -1,3 +1,7 @@
+<div>
+	コメント数
+	<%=@item.item_comments.count%>
+</div>
 商品名
 <div>
 	<%= @item.title %>
@@ -28,4 +32,28 @@
 </div>
 
 <%= link_to "編集",edit_item_path(@item) %>
+<%= link_to "削除", item_path(@item), method: :delete %>
 <%= link_to "戻る",items_path %>
+
+<div>
+	コメント一覧
+</div>
+<div>
+	<% @item.item_comments.each do |item_comment| %>
+	名前
+	<%= item_comment.user.name%>
+	コメント
+	<%= item_comment.comment %>
+	<%= link_to "削除", item_items_comment_path(item_comment.item, item_comment), method: :delete %>
+
+	<% end %>
+</div>
+
+<div>
+	コメント入力
+	<%= form_for [@item, @comment], url: item_items_comments_path(@item.id) do |f| %>
+		<%= f.label :コメント %>
+		<%= f.text_area :comment %>
+		<%= f.submit "コメントする" %>
+	<% end %>
+</div>
