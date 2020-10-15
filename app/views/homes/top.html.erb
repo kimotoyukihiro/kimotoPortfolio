@@ -2,7 +2,7 @@
 
 <div>
 <% @items.first(4).each do |item| %>
-<%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg' %>
+<%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%>
 <%= link_to item.title, item_path(item) %>
 <% end %>
 </div>

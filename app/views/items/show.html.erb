@@ -2,18 +2,24 @@
 	コメント数
 	<%=@item.item_comments.count%>
 </div>
+
 商品名
 <div>
 	<%= @item.title %>
 </div>
 
 <div>
-	<%= attachment_image_tag @item, :image, :fill, 200, 200, format: 'jpeg' %>
+	<%= attachment_image_tag @item, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%>
 </div>
 
 商品レビュー
 <div>
 	<%= @item.review %>
+</div>
+
+<div>
+	ジャンル
+	<%= @item.genre%>
 </div>
 
 <div>
@@ -33,7 +39,7 @@
 
 <%= link_to "編集",edit_item_path(@item) %>
 <%= link_to "削除", item_path(@item), method: :delete %>
-<%= link_to "戻る",items_path %>
+<%= link_to "一覧ページに戻る",items_path %>
 
 <div>
 	コメント一覧

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_11_073121) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "genre"
   end
 
   create_table "nices", force: :cascade do |t|

@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+    <% if current_user.already_niced?(item) %>
+        <%= link_to item_nices_path(@item), method: :delete, remote: true do %>
+            <div class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;">
+                <%= item.nices.count %>
+            </div>
+        <% end %>
+    <% else %>
+        <%= link_to item_nices_path(@item), method: :post, remote: true do %>
+            <div class="glyphicon glyphicon-heart" aria-hidden="true" style="color: #C0C0C0;">
+                <%= item.nices.count %>
+            </div>
+        <% end %>
+    <% end %>
+<% else %>
+    <div class="glyphicon glyphicon-heart" aria-hidden="true">
+            <%= item.nices.count %>
+    </div>
+<% end %>

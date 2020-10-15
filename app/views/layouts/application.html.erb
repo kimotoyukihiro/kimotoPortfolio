@@ -31,7 +31,11 @@
             <% end %>
           </ul>
         </nav>
-
+            <%= search_form_for @search, url:items_path do |f| %>
+              <%= f.text_field :title_cont, placeholder: '名前を入力...' %>
+              <%= f.select :genre_cont, ['1.シャンプー', '2.トリートメント', '3.アウトバストリートメント','4.スタイリング剤',"5.その他"], {include_blank: '---'} %>
+              <%= f.submit ("検索する") %>
+            <% end %>
       </div>
     </header>
     <%= yield %>

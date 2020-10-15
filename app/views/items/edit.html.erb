@@ -11,6 +11,11 @@
 		</div>
 
 		<div class="field">
+			<%= f.label :ジャンル %>
+			<%= f.select :genre, ['1.シャンプー', '2.トリートメント', '3.アウトバストリートメント','4.スタイリング剤',"5.その他"], {include_blank: '---'} %>
+		</div>
+
+		<div class="field">
 			<%= f.label :レビュー %>
 			<%= f.text_area :review %>
 		</div>
