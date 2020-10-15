@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
+
 	def show
 		@item =Item.find(params[:id])
 		@comment = ItemComment.new
 	end
 
 	def index
-		@items = Item.all
+		@items = Item.page(params[:page]).per(8)
 	end
 
 	def new
