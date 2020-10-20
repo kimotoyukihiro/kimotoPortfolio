@@ -33,8 +33,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       t.string :name
+      t.string :Hairdresser
       t.string :salon_name
       t.string :salon_address
+      t.boolean :is_active, null: :true, default: true
       t.timestamps null: false
     end
 

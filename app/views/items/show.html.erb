@@ -50,20 +50,25 @@
 </div>
 <div>
 	<% @item.item_comments.each do |item_comment| %>
-	名前
-	<%= item_comment.user.name%>
-	コメント
-	<%= item_comment.comment %>
-	<%= link_to "削除", item_items_comment_path(item_comment.item, item_comment), method: :delete %>
-
+		名前
+			<%= item_comment.user.name%>
+		コメント
+			<%= item_comment.comment %>
+		<% if item_comment.user == current_user %>
+			<%= link_to "削除", item_items_comment_path(item_comment.item, item_comment), method: :delete %>
+		<% end %>
 	<% end %>
 </div>
 
 <div>
+	<% if user_signed_in? %>
 	コメント入力
 	<%= form_for [@item, @comment], url: item_items_comments_path(@item.id) do |f| %>
 		<%= f.label :コメント %>
 		<%= f.text_area :comment %>
 		<%= f.submit "コメントする" %>
 	<% end %>
+	<% else %>
+	<% end %>
+
 </div>
