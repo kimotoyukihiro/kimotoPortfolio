@@ -16,7 +16,7 @@
   <div class="field">
     <%= f.label :パスワード %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> 文字以上の英数字)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -24,6 +24,16 @@
   <div class="field">
     <%= f.label :パスワード確認 %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+      <%= f.radio_button :Hairdresser, true, checked: true %>
+      <%= f.label :Hairdresser, "美容師以外の方" %>
+  </div>
+
+  <div class="field">
+      <%= f.radio_button :Hairdresser, false %>
+      <%= f.label :Hairdresser, "美容師の方" %>
   </div>
 
   <div class="field">

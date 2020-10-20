@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'about' => 'homes#about'
 
+  resources :users
   resources :items do
   	resource :nices, only: [:create, :destroy]
   	resources :items_comments, only: [:create, :destroy]

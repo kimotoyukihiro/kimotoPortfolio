@@ -1,0 +1,40 @@
+<%= form_for(@user, url: user_path, :method => :put )do |f| %>
+
+	<!-- エラーメッセージ表示-->
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+			<h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3><
+			<ul>
+				<% @user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<!-- エラーメッセージ表示-->
+
+	<div class="field">
+		<%= f.label :名前 %><br>
+		<%= f.text_field :name, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :メールアドレス %><br>
+		<%= f.text_field :email, class: "email" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :美容室名 %><br>
+		<%= f.text_field :salon_name, class: "salon_name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :美容室住所 %><br>
+		<%= f.text_field :salon_address, class: "salon_address" %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit :更新する %>
+	</div>
+
+<% end %>

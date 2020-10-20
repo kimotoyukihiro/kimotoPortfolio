@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
 	def index
 		@items = Item.page(params[:page]).per(8)
+		@user = current_user
 	end
 
 	def new

@@ -1,0 +1,21 @@
+<%= @user.Hairdresser %>
+
+マイページ
+<%= @user.name %>
+サロン名
+<%= @user.salon_name %>
+
+<%= link_to "編集", edit_user_path %>
+
+<table class="table">
+投稿一覧
+<tr>
+<% @items.each do |item| %>
+<td><p><%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></p></td>
+<td><p><%= item.title %></p></td>
+<td><p>コメント数: <%= item.item_comments.count %></p></td>
+<td><p>いいね数: <%= item.nices.count %></p></td>
+<p><td><%= link_to "詳細", item_path(item) %></p></td>
+<% end %>
+</tr>
+</table>

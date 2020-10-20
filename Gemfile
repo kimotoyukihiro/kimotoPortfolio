@@ -69,3 +69,8 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'pry-rails'
 gem 'ransack'
+gem 'dotenv-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
