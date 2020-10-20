@@ -1,0 +1,28 @@
+投稿編集
+<%= form_for(@item) do |f| %>
+<div class="field">
+			<%= f.label :イメージ %>
+			<%= f.attachment_field :image %>
+		</div>
+
+		<div class="field">
+			<%= f.label :タイトル %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div class="field">
+			<%= f.label :ジャンル %>
+			<%= f.select :genre, ['1.シャンプー', '2.トリートメント', '3.アウトバストリートメント','4.スタイリング剤',"5.その他"], {include_blank: '---'} %>
+		</div>
+
+		<div class="field">
+			<%= f.label :レビュー %>
+			<%= f.text_area :review %>
+		</div>
+
+		<div class="actions">
+			<%= f.submit :投稿する %>
+		</div>
+<% end %>
+
+<%=link_to "戻る", item_path(@item) %>

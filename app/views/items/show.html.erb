@@ -1,0 +1,69 @@
+<div>
+	コメント数
+	<%=@item.item_comments.count%>
+</div>
+
+<div id="show_nice_<%= @item.id %>">
+  <%= render 'nices/nice', item: @item %>
+</div>
+
+商品名
+<div>
+	<%= @item.title %>
+</div>
+
+<div>
+	<%= attachment_image_tag @item, :image, :fill, 400, 400, format: 'jpeg', fallback: "no_image.jpg",size:'400x400'%>
+</div>
+
+商品レビュー
+<div>
+	<%= @item.review %>
+</div>
+
+<div>
+	ジャンル
+	<%= @item.genre%>
+</div>
+
+<div>
+	投稿者名
+	<%= @item.user.name%>
+</div>
+
+<div>
+	美容室名
+	<%= @item.user.salon_name %>
+</div>
+
+<div>
+	美容室住所
+	<%= @item.user.salon_address %>
+</div>
+
+<%= link_to "編集",edit_item_path(@item) %>
+<%= link_to "削除", item_path(@item), method: :delete %>
+<%= link_to "一覧ページに戻る",items_path %>
+
+<div>
+	コメント一覧
+</div>
+<div>
+	<% @item.item_comments.each do |item_comment| %>
+	名前
+	<%= item_comment.user.name%>
+	コメント
+	<%= item_comment.comment %>
+	<%= link_to "削除", item_items_comment_path(item_comment.item, item_comment), method: :delete %>
+
+	<% end %>
+</div>
+
+<div>
+	コメント入力
+	<%= form_for [@item, @comment], url: item_items_comments_path(@item.id) do |f| %>
+		<%= f.label :コメント %>
+		<%= f.text_area :comment %>
+		<%= f.submit "コメントする" %>
+	<% end %>
+</div>

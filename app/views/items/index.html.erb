@@ -1,0 +1,16 @@
+<%= link_to '新規投稿',new_item_path %>
+
+<% if @search_items %>
+	<div>
+<% @search_items.each do |item| %>
+<%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%>
+<%= link_to item.title, item_path(item) %>
+<%= item.review %>
+<div>
+</div>
+<% end %>
+</div>
+<% else %>
+	<%= render 'items/item', item: @items %>
+<% end %>
+<%= paginate @items %>
