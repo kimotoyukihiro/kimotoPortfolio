@@ -1,6 +1,11 @@
-<%= @user.Hairdresser %>
+<% unless  @user == nil%>
+		<% if @user.Hairdresser == "false" %>
+			<%= link_to '新規投稿',new_item_path %>
+		<% else %>
+	<% end %>
+	<% else %>
+<% end %>
 
-<%= link_to '新規投稿',new_item_path %>
 
 <% if @search_items %>
 	<div>

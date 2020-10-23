@@ -1,40 +1,50 @@
-<%= form_for(@user, url: user_path, :method => :put )do |f| %>
+<div class ="row">
+	<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<%= form_for(@user, url: user_path, :method => :put )do |f| %>
 
-	<!-- エラーメッセージ表示-->
-	<% if @user.errors.any? %>
-		<div id="error_explanation">
-			<h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3><
-			<ul>
-				<% @user.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
+				<!-- エラーメッセージ表示-->
+				<% if @user.errors.any? %>
+					<div id="error_explanation">
+						<h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3><
+						<ul>
+							<% @user.errors.full_messages.each do |message| %>
+							<li><%= message %></li>
+							<% end %>
+						</ul>
+					</div>
 				<% end %>
-			</ul>
+				<!-- エラーメッセージ表示-->
+
+				<h3>マイページ編集</h3>
+				<div class="field">
+					<%= f.label :名前 %><br>
+					<%= f.text_field :name, class: "name" %>
+				</div>
+
+				<div class="field">
+					<%= f.label :メールアドレス %><br>
+					<%= f.text_field :email, class: "email" %>
+				</div>
+
+				<% if @user.Hairdresser == "false" %>
+					<div class="field">
+						<%= f.label :美容室名 %><br>
+						<%= f.text_field :salon_name, class: "salon_name" %>
+					</div>
+
+					<div class="field">
+						<%= f.label :美容室住所 %><br>
+						<%= f.text_field :salon_address, class: "salon_address" %>
+					</div>
+				<% else %>
+				<% end %>
+
+				<div class="actions">
+					<%= f.submit :更新する %>
+				</div>
+
+			<% end %>
 		</div>
-	<% end %>
-	<!-- エラーメッセージ表示-->
-
-	<div class="field">
-		<%= f.label :名前 %><br>
-		<%= f.text_field :name, class: "name" %>
-	</div>
-
-	<div class="field">
-		<%= f.label :メールアドレス %><br>
-		<%= f.text_field :email, class: "email" %>
-	</div>
-
-	<div class="field">
-		<%= f.label :美容室名 %><br>
-		<%= f.text_field :salon_name, class: "salon_name" %>
-	</div>
-
-	<div class="field">
-		<%= f.label :美容室住所 %><br>
-		<%= f.text_field :salon_address, class: "salon_address" %>
-	</div>
-
-	<div class="actions">
-		<%= f.submit :更新する %>
-	</div>
-
-<% end %>
+	<div class="col-xs-1"></div>
+</div>

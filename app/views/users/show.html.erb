@@ -1,21 +1,60 @@
-<%= @user.Hairdresser %>
+<div class = "row">
+	<div class = "col-lg-2"></div>
+	<div class = "col-lg-6">
+		<h3>マイページ</h3>
+		<h4>名前</h4>
+		<%= @user.name %>
+		<% if @user.Hairdresser == "false" %>
+		<h4>サロン名</h4>
+		<%= @user.salon_name %>
+		<div class="pull-right">
+			<%= link_to "編集", edit_user_path, class: "btn btn-success" %>
+		</div>
+	</div>
 
-マイページ
-<%= @user.name %>
-サロン名
-<%= @user.salon_name %>
+</div>
+<div class= "col-lg-1" ></div>
 
-<%= link_to "編集", edit_user_path %>
+<div class= "col-lg-10" >
+	<table class="table table-hover table-inverse">
+		<h3>投稿一覧</h3>
+			<% @items.each do |item| %>
+				<tr>
+					<td><p><%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></p></td>
+					<td><p><%= item.title %></p></td>
+					<td><p>コメント数: <%= item.item_comments.count %></p></td>
+					<td><p>いいね数: <%= item.nices.count %></p></td>
+					<td><p><%= link_to "詳細", item_path(item), class: "btn btn-info" %></p></td>
+				</tr>
+			<% end %>
+	</table>
+</div>
+<div class= "col-lg-1" ></div>
 
-<table class="table">
-投稿一覧
-<tr>
-<% @items.each do |item| %>
-<td><p><%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></p></td>
-<td><p><%= item.title %></p></td>
-<td><p>コメント数: <%= item.item_comments.count %></p></td>
-<td><p>いいね数: <%= item.nices.count %></p></td>
-<p><td><%= link_to "詳細", item_path(item) %></p></td>
+<% else %>
+
+<div class="pull-right">
+	<%= link_to "編集", edit_user_path, class: "btn btn-success" %>
+</div>
+
+</div>
+<div class= "col-lg-1" ></div>
+
+<div class= "col-lg-10" >
+	<table class="table table-hover table-inverse">
+		<h3>いいね一覧</h3>
+			<% @nices.each do |nice| %>
+				<tr>
+					<% @item = Item.find_by(id: nice.item_id) %>
+					<td><p><%= attachment_image_tag @item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></p></td>
+					<td><p><%= @item.title %></p></td>
+					<td><p>コメント数: <%= @item.item_comments.count %></p></td>
+					<td><p>いいね数: <%= @item.nices.count %></p></td>
+					<td><p><%= link_to "詳細", item_path(@item), class: "btn btn-info" %></p></td>
+				</tr>
+			<% end %>
+	</table>
+</div>
+<div class= "col-lg-1" ></div>
+
 <% end %>
-</tr>
-</table>
