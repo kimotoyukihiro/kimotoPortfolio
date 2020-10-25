@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :nices
 
   validates :name, presence: true,length: {maximum: 20, minimum: 2}
+  validates :email,presence: true
+  
+  validates :salon_name,presence: true
+  validates :salon_address,presence: true
 
 
  def already_niced?(item)

@@ -3,6 +3,7 @@
 		<div class="col-xs-10">
 			<h3>投稿編集</h3>
 				<%= form_for(@item) do |f| %>
+				<%= render 'layouts/error_messages', model: f.object %>
 				<div class="field">
 							<div>
 								<%= f.label :イメージ %>

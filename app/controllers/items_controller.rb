@@ -12,12 +12,16 @@ class ItemsController < ApplicationController
 
 	def new
 		@item = Item.new
+		@user = current_user
+		if @user.Hairdresser != "false"
+			redirect_to items_path
+		end
 	end
 
 	def create
 		@item = Item.new(item_params)
 		@item.user_id = current_user.id
-		if @item.save!
+		if @item.save
 			redirect_to item_path(@item.id)
 		else
 			render 'new'
@@ -26,6 +30,9 @@ class ItemsController < ApplicationController
 
 	def edit
 		@item =Item.find(params[:id])
+		if current_user != @item.user
+      		redirect_to items_path
+    	end
 	end
 
 	def update

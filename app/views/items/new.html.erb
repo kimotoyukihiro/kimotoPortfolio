@@ -5,7 +5,7 @@
 		<h3>新規投稿フォーム</h3>
 
 		<%= form_for (@item) do |f| %>
-
+		<%= render 'layouts/error_messages', model: f.object %>
 			<div class="field">
 				<div>
 					<%= f.label :イメージ %>

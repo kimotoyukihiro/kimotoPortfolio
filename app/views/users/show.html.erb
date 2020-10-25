@@ -1,60 +1,67 @@
 <div class = "row">
-	<div class = "col-lg-2"></div>
-	<div class = "col-lg-6">
+	<div class= "col-lg-2" ></div>
+	<div class = "col-lg-8">
 		<h3>マイページ</h3>
-		<h4>名前</h4>
-		<%= @user.name %>
+			<h4>
+				名前
+				<%= @user.name %>
+			</h4>
 		<% if @user.Hairdresser == "false" %>
-		<h4>サロン名</h4>
-		<%= @user.salon_name %>
+			<h4>
+				サロン名
+				<%= @user.salon_name %>
+			</h4>
+		<% else %>
+		<% end %>
+
 		<div class="pull-right">
 			<%= link_to "編集", edit_user_path, class: "btn btn-success" %>
 		</div>
 	</div>
 
 </div>
-<div class= "col-lg-1" ></div>
 
-<div class= "col-lg-10" >
-	<table class="table table-hover table-inverse">
-		<h3>投稿一覧</h3>
-			<% @items.each do |item| %>
-				<tr>
-					<td><p><%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></p></td>
-					<td><p><%= item.title %></p></td>
-					<td><p>コメント数: <%= item.item_comments.count %></p></td>
-					<td><p>いいね数: <%= item.nices.count %></p></td>
-					<td><p><%= link_to "詳細", item_path(item), class: "btn btn-info" %></p></td>
-				</tr>
-			<% end %>
-	</table>
-</div>
-<div class= "col-lg-1" ></div>
+<% if @user.Hairdresser == "false" %>
+	<div class= "row">
+		<div class= "col-lg-1" ></div>
+		<div class= "col-lg-10" >
+			<table class="table table-hover table-inverse">
+				<h3>投稿一覧</h3>
+					<% @items.each do |item| %>
+						<tr>
+							<!-- 高さ調整に<br>を使用している -->
+							<td><br><br><h4><%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></h4></td>
+							<td><br><br><h4><%= item.title %></h4></td>
+							<td><br><br><h4>コメント数: <%= item.item_comments.count %></h4></td>
+							<td><br><br><h4>いいね数: <%= item.nices.count %></h4></td>
+							<td><br><br><h4><%= link_to "詳細", item_path(item), class: "btn btn-info" %></h4></td>
+							<td><br><br><h4><%= link_to "削除", item_path(item), method: :delete , data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger"%></h4></td>
+						</tr>
+					<% end %>
+			</table>
+		</div>
+	</div>
 
 <% else %>
-
-<div class="pull-right">
-	<%= link_to "編集", edit_user_path, class: "btn btn-success" %>
-</div>
-
-</div>
-<div class= "col-lg-1" ></div>
-
-<div class= "col-lg-10" >
-	<table class="table table-hover table-inverse">
-		<h3>いいね一覧</h3>
-			<% @nices.each do |nice| %>
-				<tr>
-					<% @item = Item.find_by(id: nice.item_id) %>
-					<td><p><%= attachment_image_tag @item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></p></td>
-					<td><p><%= @item.title %></p></td>
-					<td><p>コメント数: <%= @item.item_comments.count %></p></td>
-					<td><p>いいね数: <%= @item.nices.count %></p></td>
-					<td><p><%= link_to "詳細", item_path(@item), class: "btn btn-info" %></p></td>
-				</tr>
-			<% end %>
-	</table>
-</div>
-<div class= "col-lg-1" ></div>
-
+	<div class = "row">
+		<div class= "col-lg-1" ></div>
+		<div class= "col-lg-10" >
+			<table class="table table-hover table-inverse">
+				<h3>いいね一覧</h3>
+					<% @nices.each do |nice| %>
+						<tr>
+							<h4>
+								<!-- 高さ調整に<br>を使用している -->
+								<% @item = Item.find_by(id: nice.item_id) %>
+								<td><h4><%= attachment_image_tag @item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></h4></td>
+								<td><br><br><h4><%= @item.title %></h4></td>
+								<td><br><br><h4>コメント数: <%= @item.item_comments.count %></h4></td>
+								<td><br><br><h4>いいね数: <%= @item.nices.count %></h4></td>
+								<td><br><br><h4><%= link_to "詳細", item_path(@item), class: "btn btn-info" %></h4></td>
+							</h4>
+						</tr>
+					<% end %>
+			</table>
+		</div>
+	</div>
 <% end %>
