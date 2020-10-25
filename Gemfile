@@ -74,3 +74,4 @@ gem 'dotenv-rails'
 group :production, :string do
   gem 'unicorn'
 end
+gem 'rails-i18n'

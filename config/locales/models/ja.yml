@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+      user: ユーザー
+    attributes:
+      item:
+        title: タイトル
+        review: レビュー
+        genre: ジャンル
+      user:
+        name: 名前
+        email: Eメール
+        salon_name: 美容室名
+        salon_address: 美容室住所

@@ -1,54 +1,59 @@
-<h2>新規登録</h2>
+<div class = "row">
+  <div class ="col-lg-1"></div>
+  <div class ="col-lg-10">
+    <h2>新規登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :名前 %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      <div class="field">
+        <%= f.label :名前 %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :パスワード %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上の英数字)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :パスワード確認 %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+          <%= f.radio_button :Hairdresser, true, checked: true %>
+          <%= f.label :Hairdresser, "美容師以外の方" %>
+      </div>
+
+      <div class="field">
+          <%= f.radio_button :Hairdresser, false %>
+          <%= f.label :Hairdresser, "美容師の方" %>
+      </div>
+    美容師の方は下記も入力してください。
+      <div class="field">
+        <%= f.label :美容室名 %><br />
+        <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :美容室住所 %><br />
+        <%= f.text_field :salon_address, autofocus: true, autocomplete: "salon_address" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "新規登録" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上の英数字)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード確認 %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-      <%= f.radio_button :Hairdresser, true, checked: true %>
-      <%= f.label :Hairdresser, "美容師以外の方" %>
-  </div>
-
-  <div class="field">
-      <%= f.radio_button :Hairdresser, false %>
-      <%= f.label :Hairdresser, "美容師の方" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :美容室名 %><br />
-    <%= f.text_field :salon_name, autofocus: true, autocomplete: "salon_name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :美容室住所 %><br />
-    <%= f.text_field :salon_address, autofocus: true, autocomplete: "salon_address" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
