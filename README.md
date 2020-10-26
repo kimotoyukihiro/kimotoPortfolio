@@ -32,3 +32,5 @@ https://docs.google.com/spreadsheets/d/1kDJIfA5aaBBwU2sv5XMPWJWap6ifcA53OgoPPHfw
 ## 使用素材
 フリー素材.com
 - https://free-materials.com/
+フリー素材「ぱくたそ」
+- https://www.pakutaso.com/

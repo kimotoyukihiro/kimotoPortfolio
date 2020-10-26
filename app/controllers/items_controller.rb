@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
-
 	def show
 		@item =Item.find(params[:id])
 		@comment = ItemComment.new
 	end
 
 	def index
-		@items = Item.page(params[:page]).per(8)
+		@items = Item.all
 		@user = current_user
 	end
 

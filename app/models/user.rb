@@ -9,8 +9,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true,length: {maximum: 20, minimum: 2}
   validates :email,presence: true
-  validates :salon_name,presence: true
-  validates :salon_address,presence: true
+
 
  def already_niced?(item)
    self.nices.exists?(item_id: item.id)
