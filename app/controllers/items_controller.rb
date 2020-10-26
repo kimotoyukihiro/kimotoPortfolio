@@ -1,28 +1,37 @@
 class ItemsController < ApplicationController
-
 	def show
 		@item =Item.find(params[:id])
 		@comment = ItemComment.new
 	end
 
 	def index
-		@items = Item.page(params[:page]).per(8)
+		@items = Item.all
 		@user = current_user
 	end
 
 	def new
 		@item = Item.new
+		@user = current_user
+		if @user.Hairdresser != "false"
+			redirect_to items_path
+		end
 	end
 
 	def create
 		@item = Item.new(item_params)
 		@item.user_id = current_user.id
-		@item.save!
-		redirect_to item_path(@item.id)
+		if @item.save
+			redirect_to item_path(@item.id)
+		else
+			render 'new'
+		end
 	end
 
 	def edit
 		@item =Item.find(params[:id])
+		if current_user != @item.user
+      		redirect_to items_path
+    	end
 	end
 
 	def update

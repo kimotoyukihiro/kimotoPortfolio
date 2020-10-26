@@ -1,74 +1,115 @@
-<div>
-	コメント数
-	<%=@item.item_comments.count%>
+<div class = "row">
+	<div class = "col-lg-1"></div>
+	<div class = "col-lg-5">
+		<h3>
+			商品名
+			<div>
+				<%= @item.title %>
+			</div>
+		</h3>
+	</div>
+	<div class ="col-lg-5">
+		<div>
+			<h4>
+				コメント数
+				<%=@item.item_comments.count%>
+			</h4>
+		</div>
+		<div id="show_nice_<%= @item.id %>">
+			<%= render 'nices/nice', item: @item %>
+		</div>
+	</div>
+	<div class = "col-lg-5"></div>
 </div>
 
-<div id="show_nice_<%= @item.id %>">
-  <%= render 'nices/nice', item: @item %>
+<div class ="row">
+	<div class = "col-lg-1"></div>
+	<div class = "col-lg-5">
+		<div>
+			<%= attachment_image_tag @item, :image, :fill, 400, 400, format: 'jpeg', fallback: "no_image.jpg",size:'400x400'%>
+		</div>
+	</div>
+
+	<div class = "col-lg-4">
+		<h3>商品レビュー</h3>
+		<h4>
+			<div>
+				<%= @item.review %>
+			</div>
+
+			<div>
+				ジャンル
+				<%= @item.genre%>
+			</div>
+
+			<div>
+				投稿者名
+				<%= @item.user.name%>
+			</div>
+
+			<div>
+				美容室名
+				<%= @item.user.salon_name %>
+			</div>
+
+			<div>
+				美容室住所
+				<%= @item.user.salon_address %>
+			</div>
+			<div>
+				<% if user_session == nil%>
+					<h4><%= link_to "一覧ページに戻る",items_path %></h4>
+				<% else %>
+					<% if @item.user_id == current_user.id %>
+						<h4>
+							<%= link_to "一覧ページに戻る",items_path %>
+							<div>
+								<%= link_to "編集",edit_item_path(@item) , class: "btn btn-success"%>
+								<%= link_to "削除", item_path(@item), method: :delete , data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger"%>
+							</div>
+						</h4>
+					<% else %>
+						<h4><%= link_to "一覧ページに戻る",items_path %></h4>
+					<% end %>
+				<% end %>
+			</div>
+		</h4>
+	</div>
+	<div class = "col-lg-2"></div>
 </div>
 
-商品名
-<div>
-	<%= @item.title %>
-</div>
+<div class ="row">
+	<div class = "col-lg-2"></div>
+	<div class = "col-lg-8">
+		<h3>コメント一覧</h3>
+		<h4>
+			<div>
+				<% @item.item_comments.each do |item_comment| %>
+					名前
+						<%= item_comment.user.name%>
+					コメント
+						<%= item_comment.comment %>
+					<% if item_comment.user == current_user %>
+						<%= link_to "削除", item_items_comment_path(item_comment.item, item_comment), method: :delete %>
+					<% end %>
+				<% end %>
+			</div>
 
-<div>
-	<%= attachment_image_tag @item, :image, :fill, 400, 400, format: 'jpeg', fallback: "no_image.jpg",size:'400x400'%>
-</div>
-
-商品レビュー
-<div>
-	<%= @item.review %>
-</div>
-
-<div>
-	ジャンル
-	<%= @item.genre%>
-</div>
-
-<div>
-	投稿者名
-	<%= @item.user.name%>
-</div>
-
-<div>
-	美容室名
-	<%= @item.user.salon_name %>
-</div>
-
-<div>
-	美容室住所
-	<%= @item.user.salon_address %>
-</div>
-
-<%= link_to "編集",edit_item_path(@item) %>
-<%= link_to "削除", item_path(@item), method: :delete %>
-<%= link_to "一覧ページに戻る",items_path %>
-
-<div>
-	コメント一覧
-</div>
-<div>
-	<% @item.item_comments.each do |item_comment| %>
-		名前
-			<%= item_comment.user.name%>
-		コメント
-			<%= item_comment.comment %>
-		<% if item_comment.user == current_user %>
-			<%= link_to "削除", item_items_comment_path(item_comment.item, item_comment), method: :delete %>
-		<% end %>
-	<% end %>
-</div>
-
-<div>
-	<% if user_signed_in? %>
-	コメント入力
-	<%= form_for [@item, @comment], url: item_items_comments_path(@item.id) do |f| %>
-		<%= f.label :コメント %>
-		<%= f.text_area :comment %>
-		<%= f.submit "コメントする" %>
-	<% end %>
-	<% else %>
-	<% end %>
-
+			<div>
+				<% if user_signed_in? %>
+				<%= form_for [@item, @comment], url: item_items_comments_path(@item.id) do |f| %>
+					<%= f.label :コメント入力 %>
+					<div>
+						<%= f.text_area :comment , size: "70x5"%>
+					</div>
+					<div>
+						<%= f.submit "コメントする" %>
+					</div>
+				<% end %>
+				<% else %>
+				<% end %>
+			</div>
+		</h4>
+	</div>
+		<div class = "col-lg-2"></div>
 </div>

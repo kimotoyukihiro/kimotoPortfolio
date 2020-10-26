@@ -1,28 +1,52 @@
-投稿編集
-<%= form_for(@item) do |f| %>
-<div class="field">
-			<%= f.label :イメージ %>
-			<%= f.attachment_field :image %>
-		</div>
+<div class ="row">
+	<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<h3>投稿編集</h3>
+				<%= form_for(@item) do |f| %>
+				<%= render 'layouts/error_messages', model: f.object %>
+				<div class="field">
+							<div>
+								<%= f.label :イメージ %>
+							</div>
+							<div>
+								<%= f.attachment_field :image %>
+							</div>
+						</div>
 
-		<div class="field">
-			<%= f.label :タイトル %>
-			<%= f.text_field :title %>
-		</div>
+						<div class="field">
+							<div>
+								<%= f.label :タイトル %>
+							</div>
+							<div>
+								<%= f.text_field :title %>
+							</div>
+						</div>
 
-		<div class="field">
-			<%= f.label :ジャンル %>
-			<%= f.select :genre, ['1.シャンプー', '2.トリートメント', '3.アウトバストリートメント','4.スタイリング剤',"5.その他"], {include_blank: '---'} %>
-		</div>
+						<div class="field">
+							<div>
+								<%= f.label :ジャンル %>
+							</div>
+							<div>
+								<%= f.select :genre, ['1.シャンプー', '2.トリートメント', '3.アウトバストリートメント','4.スタイリング剤',"5.その他"], {include_blank: '---'} %>
+							</div>
+						</div>
 
-		<div class="field">
-			<%= f.label :レビュー %>
-			<%= f.text_area :review %>
-		</div>
+						<div class="field">
+							<div>
+								<%= f.label :レビュー %>
+							</div>
+							<div>
+								<%= f.text_area :review %>
+							</div>
+						</div>
 
-		<div class="actions">
-			<%= f.submit :投稿する %>
+						<div class="actions">
+							<div>
+								<%= f.submit :投稿する %>
+							</div>
+						</div>
+				<% end %>
+			<%=link_to "戻る", item_path(@item) %>
 		</div>
-<% end %>
-
-<%=link_to "戻る", item_path(@item) %>
+	<div class="col-xs-1"></div>
+</div>

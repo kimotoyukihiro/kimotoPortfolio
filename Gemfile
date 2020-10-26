@@ -60,9 +60,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem 'devise'
-gem 'kaminari'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
@@ -70,7 +68,8 @@ gem "refile-mini_magick"
 gem 'pry-rails'
 gem 'ransack'
 gem 'dotenv-rails'
-
-group :production do
-  gem 'unicorn', '5.4.1'
+#gem 'mini_racer'デプロイ時に＃を消す
+group :production, :string do
+  gem 'unicorn'
 end
+gem 'rails-i18n'

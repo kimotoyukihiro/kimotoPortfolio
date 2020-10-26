@@ -10,32 +10,35 @@
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
+    <header class="navbar navbar-fixed-top navbar-inverse ">
       <div class="container">
 
-        <nav class="nav navbar-nav navbar-left">
-          <%= link_to'美容商材でもっと綺麗に',root_path %></span>
+        <nav class="nav navbar-nav navbar-left"></span>
         </nav>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-left">
             <% if user_signed_in? %>
-              <li><%= link_to ' 投稿一覧', items_path, class: 'glyphicon glyphicon-home home' %></li>
+              <li><%= link_to'Home',root_path, class: 'glyphicon glyphicon-home home'%></li>
+              <li><%= link_to ' 投稿一覧', items_path, class: 'glyphicon glyphicon-pencil pencil' %></li>
               <li><%= link_to ' About', about_path, class: 'glyphicon glyphicon-link about' %></li>
               <li><%= link_to ' マイページ',user_path(current_user), class: 'glyphicon glyphicon-user users'%></li>
               <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
             <% else %>
-              <li><%= link_to ' 投稿一覧', items_path, class: 'glyphicon glyphicon-home home' %></li>
+              <li><%= link_to'Home',root_path, class: 'glyphicon glyphicon-home home'%></li>
+              <li><%= link_to ' 投稿一覧', items_path, class: 'glyphicon glyphicon-pencil pencil' %></li>
               <li><%= link_to ' About', about_path, class: 'glyphicon glyphicon-link about' %></li>
               <li><%= link_to ' 新規登録', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
               <li><%= link_to ' ログイン', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
             <% end %>
           </ul>
         </nav>
+        <ul class="nav navbar-nav navbar-right">
             <%= search_form_for @search, url:items_path do |f| %>
               <%= f.text_field :title_cont, placeholder: '名前を入力...' %>
               <%= f.select :genre_cont, ['1.シャンプー', '2.トリートメント', '3.アウトバストリートメント','4.スタイリング剤',"5.その他"], {include_blank: '---'} %>
               <%= f.submit ("検索する") %>
             <% end %>
+        </ul>
       </div>
     </header>
     <%= yield %>
