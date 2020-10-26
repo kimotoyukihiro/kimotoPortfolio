@@ -68,7 +68,7 @@ gem "refile-mini_magick"
 gem 'pry-rails'
 gem 'ransack'
 gem 'dotenv-rails'
-#gem 'mini_racer'デプロイ時に＃を消す
+gem 'mini_racer'
 group :production, :string do
   gem 'unicorn'
 end
