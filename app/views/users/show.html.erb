@@ -52,6 +52,7 @@
 							<h4>
 								<!-- 高さ調整に<br>を使用している -->
 								<% @item = Item.find_by(id: nice.item_id) %>
+								<% next if @item ==  nil %>
 								<td><h4><%= attachment_image_tag @item, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg",size:'100x100'%></h4></td>
 								<td><br><br><h4><%= @item.title %></h4></td>
 								<td><br><br><h4>コメント数: <%= @item.item_comments.count %></h4></td>
