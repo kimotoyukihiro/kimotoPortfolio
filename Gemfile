@@ -68,7 +68,7 @@ gem "refile-mini_magick"
 gem 'pry-rails'
 gem 'ransack'
 gem 'dotenv-rails'
-gem 'mini_racer'
+#gem 'mini_racer'
 group :production, :string do
   gem 'unicorn'
 end
