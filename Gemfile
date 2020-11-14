@@ -73,3 +73,7 @@ group :production, :string do
   gem 'unicorn'
 end
 gem 'rails-i18n'
+
+group :production do
+  gem 'mysql2'
+end
