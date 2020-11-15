@@ -73,4 +73,4 @@ group :production, :string do
   gem 'unicorn','5.5.0          '
 end
 gem 'rails-i18n'
-gem'unicorn-worker-killer'
+gem 'unicorn-rails'
