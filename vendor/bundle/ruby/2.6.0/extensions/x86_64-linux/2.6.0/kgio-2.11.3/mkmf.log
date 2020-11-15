@@ -100,7 +100,7 @@ checked program was:
 /* end */
 
 "gcc -o conftest -I/home/vagrant/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/vagrant/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/vagrant/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/home/vagrant/.rbenv/versions/2.6.6/include    -D_GNU_SOURCE -DPOSIX_C_SOURCE=1-D_POSIX_C_SOURCE=200112L -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/vagrant/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/vagrant/.rbenv/versions/2.6.6/lib -L. -L/home/vagrant/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -lrt  -Wl,-rpath,/home/vagrant/.rbenv/versions/2.6.6/lib -L/home/vagrant/.rbenv/versions/2.6.6/lib -lruby -lnsl -lrt  -lm   -lc"
-/tmp/ccvBTu1o.o: In function `t':
+/tmp/ccBDMrDd.o: In function `t':
 /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/kgio-2.11.3/ext/kgio/conftest.c:15: undefined reference to `t_open'
 collect2: error: ld returned 1 exit status
 checked program was:
@@ -751,7 +751,7 @@ checked program was:
 /* end */
 
 "gcc -o conftest -I/home/vagrant/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-linux -I/home/vagrant/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/home/vagrant/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I. -I/home/vagrant/.rbenv/versions/2.6.6/include    -D_GNU_SOURCE -DPOSIX_C_SOURCE=1-D_POSIX_C_SOURCE=200112L -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/vagrant/.rbenv/versions/2.6.6/lib -Wl,-rpath,/home/vagrant/.rbenv/versions/2.6.6/lib -L. -L/home/vagrant/.rbenv/versions/2.6.6/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic    -lrt  -Wl,-rpath,/home/vagrant/.rbenv/versions/2.6.6/lib -L/home/vagrant/.rbenv/versions/2.6.6/lib -lruby -lrt  -lm   -lc"
-/tmp/cc9tB51n.o: In function `t':
+/tmp/ccN0su8h.o: In function `t':
 /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/kgio-2.11.3/ext/kgio/conftest.c:15: undefined reference to `rb_thread_blocking_region'
 collect2: error: ld returned 1 exit status
 checked program was:

@@ -1,5 +1,5 @@
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.8/ext/bootsnap
-/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-18529-k28efr.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-23265-r10f9a.rb extconf.rb
 creating Makefile
 
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.8/ext/bootsnap
@@ -32,4 +32,4 @@ linking shared-object bootsnap/bootsnap.so
 
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.8/ext/bootsnap
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20201115-18529-826tjx/bootsnap
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20201115-23265-1d07apm/bootsnap

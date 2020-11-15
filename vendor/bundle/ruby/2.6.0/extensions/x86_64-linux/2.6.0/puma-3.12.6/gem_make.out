@@ -1,5 +1,5 @@
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
-/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-18529-1g0eg86.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-23265-1rpqdbq.rb extconf.rb
 checking for BIO_read() in -lcrypto... yes
 checking for SSL_CTX_new() in -lssl... yes
 checking for openssl/bio.h... yes
@@ -41,4 +41,4 @@ linking shared-object puma/puma_http11.so
 
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20201115-18529-kppvfq/puma
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20201115-23265-1pwfn1o/puma

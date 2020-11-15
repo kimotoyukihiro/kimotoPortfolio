@@ -1,5 +1,5 @@
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.16/ext/mri
-/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-18529-12ny79x.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-23265-dlfna6.rb extconf.rb
 creating Makefile
 
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.16/ext/mri
@@ -25,4 +25,4 @@ linking shared-object bcrypt_ext.so
 
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.16/ext/mri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20201115-18529-8m3sxb
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20201115-23265-9eyd9x

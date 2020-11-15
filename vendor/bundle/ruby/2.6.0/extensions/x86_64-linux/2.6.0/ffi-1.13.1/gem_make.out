@@ -1,5 +1,5 @@
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/ffi-1.13.1/ext/ffi_c
-/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-18529-ew22fx.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-23265-13dgm8r.rb extconf.rb
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi... no
 creating extconf.h
@@ -148,4 +148,4 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20201115-18529-apy7k2
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20201115-23265-j6i1aj

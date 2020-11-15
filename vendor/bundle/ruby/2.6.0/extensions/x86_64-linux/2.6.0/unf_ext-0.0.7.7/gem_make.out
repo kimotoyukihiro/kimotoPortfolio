@@ -1,5 +1,5 @@
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext/unf_ext
-/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-18529-1t3bo7m.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-23265-1ii0qt6.rb extconf.rb
 checking for -lstdc++... yes
 creating Makefile
 
@@ -21,4 +21,4 @@ linking shared-object unf_ext.so
 
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext/unf_ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20201115-18529-1sgk10g
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20201115-23265-uqb3po

@@ -1,5 +1,5 @@
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.4/ext/nio4r
-/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-18529-1lrvunt.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.6.6/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20201115-23265-ijyt8e.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for sys/select.h... yes
@@ -72,4 +72,4 @@ linking shared-object nio4r_ext.so
 
 current directory: /home/vagrant/work/kimotoPortfolio/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.4/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20201115-18529-8f3d3v
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20201115-23265-15vmi82
