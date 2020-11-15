@@ -70,7 +70,7 @@ gem 'ransack'
 gem 'dotenv-rails'
 #gem 'mini_racer'デプロイ時に＃を消す
 group :production, :string do
-  gem 'unicorn'
+  gem 'unicorn','5.4.1'
 end
 gem 'rails-i18n'
 
