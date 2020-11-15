@@ -74,6 +74,3 @@ group :production, :string do
 end
 gem 'rails-i18n'
 gem'unicorn-worker-killer'
-group :production do
-  gem 'mysql2'
-end
