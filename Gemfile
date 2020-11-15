@@ -67,9 +67,10 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'pry-rails'
 gem 'ransack'
-gem 'dotenv-rails'
-#gem 'mini_racer'
-group :production, :string do
-  gem 'unicorn'
-end
+
+#gem 'mini_racer'デプロイ時に＃を消す
 gem 'rails-i18n'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
