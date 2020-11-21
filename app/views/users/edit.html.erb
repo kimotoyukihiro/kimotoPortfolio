@@ -27,7 +27,7 @@
 					<%= f.text_field :email, class: "email" %>
 				</div>
 
-				<% if @user.Hairdresser == "false" %>
+				<% if @user.hairdresser == "false" %>
 					<div class="field">
 						<%= f.label :美容室名 %><br>
 						<%= f.text_field :salon_name, class: "salon_name" %>

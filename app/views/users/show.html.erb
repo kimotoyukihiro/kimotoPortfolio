@@ -6,7 +6,7 @@
 				名前
 				<%= @user.name %>
 			</h4>
-		<% if @user.Hairdresser == "false" %>
+		<% if @user.hairdresser == "false" %>
 			<h4>
 				サロン名
 				<%= @user.salon_name %>
@@ -20,7 +20,7 @@
 
 </div>
 
-<% if @user.Hairdresser == "false" %>
+<% if @user.hairdresser == "false" %>
 	<div class= "row">
 		<div class= "col-lg-1" ></div>
 		<div class= "col-lg-10" >

@@ -9,6 +9,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true,length: {maximum: 20, minimum: 2}
   validates :email,presence: true
+  validates :salon_name,presence: true, if: :hairdresser?
+  validates :salon_address,presence: true, if: :hairdresser?
+
+ def hairdresser?
+   hairdresser == 'false'
+ end
 
 
  def already_niced?(item)

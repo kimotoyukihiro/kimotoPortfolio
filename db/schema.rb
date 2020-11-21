@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_10_11_073121) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.string "Hairdresser"
+    t.string "hairdresser"
     t.string "salon_name"
     t.string "salon_address"
     t.datetime "created_at", null: false
