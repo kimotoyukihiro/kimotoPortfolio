@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 	def new
 		@item = Item.new
 		@user = current_user
-		if @user.Hairdresser != "false"
+		if @user.hairdresser != "false"
 			redirect_to items_path
 		end
 	end
